@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_ratings",
+  "info": {
+    "displayName": "Rating"
+  },
+  "options": {},
+  "attributes": {
+    "up": {
+      "type": "integer"
+    },
+    "down": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

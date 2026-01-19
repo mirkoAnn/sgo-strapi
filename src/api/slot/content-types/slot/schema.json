@@ -84,6 +84,11 @@
     },
     "gameUrl": {
       "type": "string"
+    },
+    "rating": {
+      "type": "component",
+      "component": "common.rating",
+      "repeatable": false
     }
   }
 }

@@ -11,6 +11,17 @@ export interface CommonColors extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonRating extends Struct.ComponentSchema {
+  collectionName: 'components_common_ratings';
+  info: {
+    displayName: 'Rating';
+  };
+  attributes: {
+    down: Schema.Attribute.Integer;
+    up: Schema.Attribute.Integer;
+  };
+}
+
 export interface FaqsFaqs extends Struct.ComponentSchema {
   collectionName: 'components_faqs_faqs';
   info: {
@@ -57,6 +68,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'common.colors': CommonColors;
+      'common.rating': CommonRating;
       'faqs.faqs': FaqsFaqs;
       'seo.seo': SeoSeo;
       'slot.info': SlotInfo;

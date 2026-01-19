@@ -626,6 +626,7 @@ export interface ApiSlotSlot extends Struct.CollectionTypeSchema {
     opinionContent: Schema.Attribute.Blocks;
     provider: Schema.Attribute.Relation<'manyToOne', 'api::provider.provider'>;
     publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Component<'common.rating', false>;
     rulesContent: Schema.Attribute.Blocks;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     sessions: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
