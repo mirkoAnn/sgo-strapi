@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "providers",
+  "info": {
+    "singularName": "provider",
+    "pluralName": "providers",
+    "displayName": "Provider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "colors": {
+      "type": "component",
+      "component": "common.colors",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slot.slot",
+      "mappedBy": "provider"
+    }
+  }
+}

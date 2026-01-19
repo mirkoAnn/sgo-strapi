@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_colors",
+  "info": {
+    "displayName": "Colors"
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

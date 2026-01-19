@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slot_themes",
+  "info": {
+    "singularName": "slot-theme",
+    "pluralName": "slot-themes",
+    "displayName": "Slot Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "introContent": {
+      "type": "blocks"
+    },
+    "firstContent": {
+      "type": "blocks"
+    },
+    "secondContent": {
+      "type": "blocks"
+    },
+    "faqs": {
+      "type": "component",
+      "component": "faqs.faqs",
+      "repeatable": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "slots": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::slot.slot",
+      "mappedBy": "slotThemes"
+    }
+  }
+}

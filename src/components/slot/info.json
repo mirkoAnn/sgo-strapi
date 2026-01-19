@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_slot_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "paylines": {
+      "type": "string"
+    },
+    "reels": {
+      "type": "string"
+    },
+    "betMin": {
+      "type": "string"
+    },
+    "betMax": {
+      "type": "string"
+    },
+    "winMin": {
+      "type": "string"
+    },
+    "winMax": {
+      "type": "string"
+    },
+    "hasFreeSpins": {
+      "type": "boolean"
+    },
+    "hasBonusGame": {
+      "type": "boolean"
+    },
+    "hasJackpot": {
+      "type": "boolean"
+    },
+    "rtp": {
+      "type": "string"
+    },
+    "volatility": {
+      "type": "enumeration",
+      "enum": [
+        "Bassa",
+        "Media",
+        "Alta"
+      ]
+    }
+  },
+  "config": {}
+}

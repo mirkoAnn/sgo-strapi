@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "homepages",
+  "collectionName": "slots_pages",
   "info": {
-    "singularName": "homepage",
-    "pluralName": "homepages",
-    "displayName": "Homepage"
+    "singularName": "slots-page",
+    "pluralName": "slots-pages",
+    "displayName": "Slots Page"
   },
   "options": {
     "draftAndPublish": true
@@ -19,13 +19,16 @@
     "introContent": {
       "type": "blocks"
     },
-    "whyChooseSGOContent": {
+    "whatAreSlotsContent": {
       "type": "blocks"
     },
     "howToPlaySlotsContent": {
       "type": "blocks"
     },
-    "jackpotContent": {
+    "slotsCategoryContent": {
+      "type": "blocks"
+    },
+    "bestSlotsContent": {
       "type": "blocks"
     },
     "faqs": {

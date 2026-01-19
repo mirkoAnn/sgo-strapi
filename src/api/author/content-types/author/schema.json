@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "facebookProfile": {
+      "type": "string"
+    },
+    "linkedinProfile": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slot.slot",
+      "mappedBy": "author"
+    }
+  }
+}
