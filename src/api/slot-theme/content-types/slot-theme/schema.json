@@ -42,6 +42,12 @@
       "relation": "manyToMany",
       "target": "api::slot.slot",
       "mappedBy": "slotThemes"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "slot_themes"
     }
   }
 }

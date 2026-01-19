@@ -455,7 +455,12 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    providers: Schema.Attribute.Relation<'oneToMany', 'api::provider.provider'>;
     publishedAt: Schema.Attribute.DateTime;
+    slot_themes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slot-theme.slot-theme'
+    >;
     slots: Schema.Attribute.Relation<'oneToMany', 'api::slot.slot'>;
     slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
@@ -542,6 +547,7 @@ export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     colors: Schema.Attribute.Component<'common.colors', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -575,6 +581,7 @@ export interface ApiSlotThemeSlotTheme extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

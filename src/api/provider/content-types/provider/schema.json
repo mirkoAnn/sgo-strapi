@@ -43,6 +43,12 @@
       "relation": "oneToMany",
       "target": "api::slot.slot",
       "mappedBy": "provider"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "providers"
     }
   }
 }

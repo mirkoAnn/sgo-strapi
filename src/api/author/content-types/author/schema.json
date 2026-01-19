@@ -41,6 +41,18 @@
       "relation": "oneToMany",
       "target": "api::slot.slot",
       "mappedBy": "author"
+    },
+    "slot_themes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slot-theme.slot-theme",
+      "mappedBy": "author"
+    },
+    "providers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::provider.provider",
+      "mappedBy": "author"
     }
   }
 }
