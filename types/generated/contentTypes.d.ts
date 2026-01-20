@@ -623,7 +623,7 @@ export interface ApiSlotSlot extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     gameplay: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    gameUrl: Schema.Attribute.String;
+    gameUrl: Schema.Attribute.Text;
     info: Schema.Attribute.Component<'slot.info', false>;
     introContent: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

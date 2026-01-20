@@ -83,7 +83,7 @@
       "inversedBy": "slots"
     },
     "gameUrl": {
-      "type": "string"
+      "type": "text"
     },
     "rating": {
       "type": "component",
