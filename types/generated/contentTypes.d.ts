@@ -503,6 +503,35 @@ export interface ApiCasinosPageCasinosPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGameErrorReportGameErrorReport
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'game_error_reports';
+  info: {
+    displayName: 'Game Error Report';
+    pluralName: 'game-error-reports';
+    singularName: 'game-error-report';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::game-error-report.game-error-report'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1195,6 +1224,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::author.author': ApiAuthorAuthor;
       'api::casinos-page.casinos-page': ApiCasinosPageCasinosPage;
+      'api::game-error-report.game-error-report': ApiGameErrorReportGameErrorReport;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::provider.provider': ApiProviderProvider;
       'api::slot-theme.slot-theme': ApiSlotThemeSlotTheme;

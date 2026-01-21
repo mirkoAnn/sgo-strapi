@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "game_error_reports",
+  "info": {
+    "singularName": "game-error-report",
+    "pluralName": "game-error-reports",
+    "displayName": "Game Error Report"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}
