@@ -89,6 +89,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::brand.brand"
+    },
+    "affiliationUrl": {
+      "type": "string"
     }
   }
 }

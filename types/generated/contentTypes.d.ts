@@ -515,6 +515,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    affiliationUrl: Schema.Attribute.String;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
     colors: Schema.Attribute.Component<'common.colors', false>;
