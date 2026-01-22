@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_casino_welcome_bonuses",
+  "info": {
+    "displayName": "welcomeBonus"
+  },
+  "options": {},
+  "attributes": {
+    "isExclusive": {
+      "type": "boolean",
+      "default": false
+    },
+    "noDeposit": {
+      "type": "string"
+    },
+    "withDeposit": {
+      "type": "string"
+    },
+    "noDepositRequirements": {
+      "type": "string"
+    },
+    "withDepositRequirements": {
+      "type": "string"
+    },
+    "tcUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

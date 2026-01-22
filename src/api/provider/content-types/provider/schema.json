@@ -49,6 +49,12 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "providers"
+    },
+    "casinos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::casino.casino",
+      "mappedBy": "providers"
     }
   }
 }

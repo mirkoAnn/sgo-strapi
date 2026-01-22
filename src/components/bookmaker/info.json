@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_bookmaker_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "hasEsports": {
+      "type": "boolean"
+    },
+    "hasStreaming": {
+      "type": "boolean"
+    },
+    "hasCashout": {
+      "type": "boolean"
+    },
+    "hasGreatBets": {
+      "type": "boolean"
+    },
+    "hasBetsVariety": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

@@ -441,6 +441,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    casinos: Schema.Attribute.Relation<'oneToMany', 'api::casino.casino'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -466,6 +467,90 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
+  collectionName: 'brands';
+  info: {
+    displayName: 'Brand';
+    pluralName: 'brands';
+    singularName: 'brand';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    depositMin: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    hasApp: Schema.Attribute.Boolean;
+    hasGreatDesign: Schema.Attribute.Boolean;
+    homepageUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    telephone: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    withdrawalMin: Schema.Attribute.String;
+    withdrawalTimes: Schema.Attribute.String;
+  };
+}
+
+export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
+  collectionName: 'casinos';
+  info: {
+    displayName: 'Casino';
+    pluralName: 'casinos';
+    singularName: 'casino';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
+    colors: Schema.Attribute.Component<'common.colors', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    info: Schema.Attribute.Component<'casino.info', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::casino.casino'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    payment_methods: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::payment-method.payment-method'
+    >;
+    providers: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::provider.provider'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<100>;
+    rating: Schema.Attribute.Component<'common.rating', false>;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    welcomeBonus: Schema.Attribute.Component<'casino.welcome-bonus', false>;
   };
 }
 
@@ -565,6 +650,37 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPaymentMethodPaymentMethod
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'payment_methods';
+  info: {
+    displayName: 'Payment Method';
+    pluralName: 'payment-methods';
+    singularName: 'payment-method';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    casinos: Schema.Attribute.Relation<'manyToMany', 'api::casino.casino'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment-method.payment-method'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
   collectionName: 'providers';
   info: {
@@ -577,6 +693,7 @@ export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    casinos: Schema.Attribute.Relation<'manyToMany', 'api::casino.casino'>;
     colors: Schema.Attribute.Component<'common.colors', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1223,9 +1340,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::author.author': ApiAuthorAuthor;
+      'api::brand.brand': ApiBrandBrand;
+      'api::casino.casino': ApiCasinoCasino;
       'api::casinos-page.casinos-page': ApiCasinosPageCasinosPage;
       'api::game-error-report.game-error-report': ApiGameErrorReportGameErrorReport;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::payment-method.payment-method': ApiPaymentMethodPaymentMethod;
       'api::provider.provider': ApiProviderProvider;
       'api::slot-theme.slot-theme': ApiSlotThemeSlotTheme;
       'api::slot.slot': ApiSlotSlot;

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_casino_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "hasRoulette": {
+      "type": "boolean"
+    },
+    "hasBlackjack": {
+      "type": "boolean"
+    },
+    "hasPoker": {
+      "type": "boolean"
+    },
+    "hasLiveGames": {
+      "type": "boolean"
+    },
+    "hasSportBetting": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

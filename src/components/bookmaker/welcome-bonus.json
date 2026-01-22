@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_bookmaker_welcome_bonuses",
+  "info": {
+    "displayName": "welcomeBonus"
+  },
+  "options": {},
+  "attributes": {
+    "withDeposit": {
+      "type": "string"
+    },
+    "withDepositRequirements": {
+      "type": "string"
+    },
+    "tcUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

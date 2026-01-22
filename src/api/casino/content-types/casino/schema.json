@@ -1,0 +1,94 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casinos",
+  "info": {
+    "singularName": "casino",
+    "pluralName": "casinos",
+    "displayName": "Casino"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "welcomeBonus": {
+      "type": "component",
+      "component": "casino.welcome-bonus",
+      "repeatable": false
+    },
+    "info": {
+      "type": "component",
+      "component": "casino.info",
+      "repeatable": false
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "casinos"
+    },
+    "providers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::provider.provider",
+      "inversedBy": "casinos"
+    },
+    "colors": {
+      "type": "component",
+      "component": "common.colors",
+      "repeatable": false
+    },
+    "rating": {
+      "type": "component",
+      "component": "common.rating",
+      "repeatable": false
+    },
+    "payment_methods": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::payment-method.payment-method",
+      "mappedBy": "casinos"
+    },
+    "rank": {
+      "type": "integer",
+      "default": 100
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    }
+  }
+}
