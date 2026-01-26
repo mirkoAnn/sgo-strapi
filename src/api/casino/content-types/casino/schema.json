@@ -92,6 +92,24 @@
     },
     "affiliationUrl": {
       "type": "string"
+    },
+    "introContent": {
+      "type": "blocks"
+    },
+    "siteDesignContent": {
+      "type": "blocks"
+    },
+    "slotsContent": {
+      "type": "blocks"
+    },
+    "liveContent": {
+      "type": "blocks"
+    },
+    "securityPaymentsContent": {
+      "type": "blocks"
+    },
+    "opinionContent": {
+      "type": "blocks"
     }
   }
 }

@@ -527,6 +527,8 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
       true
     >;
     info: Schema.Attribute.Component<'casino.info', false>;
+    introContent: Schema.Attribute.Blocks;
+    liveContent: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -534,6 +536,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    opinionContent: Schema.Attribute.Blocks;
     payment_methods: Schema.Attribute.Relation<
       'manyToMany',
       'api::payment-method.payment-method'
@@ -545,7 +548,10 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     rank: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<100>;
     rating: Schema.Attribute.Component<'common.rating', false>;
+    securityPaymentsContent: Schema.Attribute.Blocks;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+    siteDesignContent: Schema.Attribute.Blocks;
+    slotsContent: Schema.Attribute.Blocks;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -570,10 +576,12 @@ export interface ApiCasinosPageCasinosPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     faqs: Schema.Attribute.Component<'faqs.faqs', true>;
+    hintsContent: Schema.Attribute.Blocks;
     howToChooseContent: Schema.Attribute.Blocks;
     introContent: Schema.Attribute.Blocks;
     legalCasinosListContent: Schema.Attribute.Blocks;
     legalsCasinosContent: Schema.Attribute.Blocks;
+    liveContent: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -582,6 +590,7 @@ export interface ApiCasinosPageCasinosPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+    slotContent: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
