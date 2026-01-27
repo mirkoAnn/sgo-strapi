@@ -110,6 +110,16 @@
     },
     "opinionContent": {
       "type": "blocks"
+    },
+    "imagesMobile": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
     }
   }
 }

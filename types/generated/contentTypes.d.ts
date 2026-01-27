@@ -526,6 +526,10 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    imagesMobile: Schema.Attribute.Media<
+      'images' | 'videos' | 'audios' | 'files',
+      true
+    >;
     info: Schema.Attribute.Component<'casino.info', false>;
     introContent: Schema.Attribute.Blocks;
     liveContent: Schema.Attribute.Blocks;
