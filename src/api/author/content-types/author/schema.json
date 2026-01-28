@@ -42,7 +42,7 @@
       "target": "api::slot.slot",
       "mappedBy": "author"
     },
-    "slot_themes": {
+    "slotThemes": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::slot-theme.slot-theme",

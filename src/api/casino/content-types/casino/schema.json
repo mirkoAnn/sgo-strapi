@@ -75,11 +75,11 @@
       "component": "common.rating",
       "repeatable": false
     },
-    "payment_methods": {
+    "paymentMethods": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::payment-method.payment-method",
-      "mappedBy": "casinos"
+      "inversedBy": "casinos"
     },
     "rank": {
       "type": "integer",

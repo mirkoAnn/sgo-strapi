@@ -22,7 +22,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::casino.casino",
-      "inversedBy": "payment_methods"
+      "mappedBy": "paymentMethods"
     }
   }
 }

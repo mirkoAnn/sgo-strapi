@@ -458,11 +458,11 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     providers: Schema.Attribute.Relation<'oneToMany', 'api::provider.provider'>;
     publishedAt: Schema.Attribute.DateTime;
-    slot_themes: Schema.Attribute.Relation<
+    slots: Schema.Attribute.Relation<'oneToMany', 'api::slot.slot'>;
+    slotThemes: Schema.Attribute.Relation<
       'oneToMany',
       'api::slot-theme.slot-theme'
     >;
-    slots: Schema.Attribute.Relation<'oneToMany', 'api::slot.slot'>;
     slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -541,7 +541,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     opinionContent: Schema.Attribute.Blocks;
-    payment_methods: Schema.Attribute.Relation<
+    paymentMethods: Schema.Attribute.Relation<
       'manyToMany',
       'api::payment-method.payment-method'
     >;
