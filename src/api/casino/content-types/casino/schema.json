@@ -120,6 +120,12 @@
         "audios",
         "files"
       ]
+    },
+    "bonusContent": {
+      "type": "blocks"
+    },
+    "sportContent": {
+      "type": "blocks"
     }
   }
 }

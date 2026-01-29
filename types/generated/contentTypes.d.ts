@@ -517,6 +517,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
   attributes: {
     affiliationUrl: Schema.Attribute.String;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    bonusContent: Schema.Attribute.Blocks;
     brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
     colors: Schema.Attribute.Component<'common.colors', false>;
     createdAt: Schema.Attribute.DateTime;
@@ -557,6 +558,7 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
     siteDesignContent: Schema.Attribute.Blocks;
     slotsContent: Schema.Attribute.Blocks;
     slug: Schema.Attribute.UID<'title'>;
+    sportContent: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
