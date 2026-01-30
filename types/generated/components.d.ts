@@ -32,11 +32,56 @@ export interface CasinoInfo extends Struct.ComponentSchema {
     displayName: 'Info';
   };
   attributes: {
+    bonusRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    designRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    gamesRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     hasBlackjack: Schema.Attribute.Boolean;
     hasLiveGames: Schema.Attribute.Boolean;
     hasPoker: Schema.Attribute.Boolean;
     hasRoulette: Schema.Attribute.Boolean;
     hasSportBetting: Schema.Attribute.Boolean;
+    mobileRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    supportRating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
   };
 }
 

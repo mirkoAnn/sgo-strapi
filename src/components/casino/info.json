@@ -19,6 +19,36 @@
     },
     "hasSportBetting": {
       "type": "boolean"
+    },
+    "bonusRating": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
+    },
+    "designRating": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
+    },
+    "gamesRating": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
+    },
+    "supportRating": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
+    },
+    "mobileRating": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
     }
   },
   "config": {}
