@@ -118,6 +118,7 @@ export interface CommonRating extends Struct.ComponentSchema {
   };
   attributes: {
     down: Schema.Attribute.Integer;
+    trend: Schema.Attribute.JSON;
     up: Schema.Attribute.Integer;
   };
 }
