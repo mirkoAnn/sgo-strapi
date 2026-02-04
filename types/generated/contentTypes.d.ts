@@ -500,7 +500,7 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     withdrawalMin: Schema.Attribute.String;
-    withdrawalTimes: Schema.Attribute.String;
+    withdrawalTime: Schema.Attribute.String;
   };
 }
 

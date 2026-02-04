@@ -33,7 +33,7 @@
     "withdrawalMin": {
       "type": "string"
     },
-    "withdrawalTimes": {
+    "withdrawalTime": {
       "type": "string"
     },
     "hasApp": {
