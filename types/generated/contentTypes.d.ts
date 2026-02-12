@@ -732,6 +732,35 @@ export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProvidersPageProvidersPage extends Struct.SingleTypeSchema {
+  collectionName: 'providers_pages';
+  info: {
+    displayName: 'ProvidersPage';
+    pluralName: 'providers-pages';
+    singularName: 'providers-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::providers-page.providers-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSlotThemeSlotTheme extends Struct.CollectionTypeSchema {
   collectionName: 'slot_themes';
   info: {
@@ -1363,6 +1392,7 @@ declare module '@strapi/strapi' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::payment-method.payment-method': ApiPaymentMethodPaymentMethod;
       'api::provider.provider': ApiProviderProvider;
+      'api::providers-page.providers-page': ApiProvidersPageProvidersPage;
       'api::slot-theme.slot-theme': ApiSlotThemeSlotTheme;
       'api::slot.slot': ApiSlotSlot;
       'api::slots-page.slots-page': ApiSlotsPageSlotsPage;
