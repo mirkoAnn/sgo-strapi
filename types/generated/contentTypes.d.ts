@@ -458,6 +458,10 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     providers: Schema.Attribute.Relation<'oneToMany', 'api::provider.provider'>;
     publishedAt: Schema.Attribute.DateTime;
+    slot_mechanics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slot-mechanic.slot-mechanic'
+    >;
     slots: Schema.Attribute.Relation<'oneToMany', 'api::slot.slot'>;
     slotThemes: Schema.Attribute.Relation<
       'oneToMany',
@@ -761,6 +765,43 @@ export interface ApiProvidersPageProvidersPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSlotMechanicSlotMechanic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'slot_mechanics';
+  info: {
+    displayName: 'Slot Mechanic';
+    pluralName: 'slot-mechanics';
+    singularName: 'slot-mechanic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<'faqs.faqs', true>;
+    firstContent: Schema.Attribute.Blocks;
+    introContent: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::slot-mechanic.slot-mechanic'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    secondContent: Schema.Attribute.Blocks;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    slots: Schema.Attribute.Relation<'oneToMany', 'api::slot.slot'>;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSlotThemeSlotTheme extends Struct.CollectionTypeSchema {
   collectionName: 'slot_themes';
   info: {
@@ -828,6 +869,10 @@ export interface ApiSlotSlot extends Struct.CollectionTypeSchema {
     rulesContent: Schema.Attribute.Blocks;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     sessions: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    slot_mechanic: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::slot-mechanic.slot-mechanic'
+    >;
     slotThemes: Schema.Attribute.Relation<
       'manyToMany',
       'api::slot-theme.slot-theme'
@@ -1393,6 +1438,7 @@ declare module '@strapi/strapi' {
       'api::payment-method.payment-method': ApiPaymentMethodPaymentMethod;
       'api::provider.provider': ApiProviderProvider;
       'api::providers-page.providers-page': ApiProvidersPageProvidersPage;
+      'api::slot-mechanic.slot-mechanic': ApiSlotMechanicSlotMechanic;
       'api::slot-theme.slot-theme': ApiSlotThemeSlotTheme;
       'api::slot.slot': ApiSlotSlot;
       'api::slots-page.slots-page': ApiSlotsPageSlotsPage;

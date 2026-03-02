@@ -89,6 +89,12 @@
       "type": "component",
       "component": "common.rating",
       "repeatable": false
+    },
+    "slot_mechanic": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::slot-mechanic.slot-mechanic",
+      "inversedBy": "slots"
     }
   }
 }
