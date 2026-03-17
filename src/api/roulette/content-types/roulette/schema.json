@@ -59,7 +59,7 @@
       "target": "api::provider.provider",
       "inversedBy": "roulettes"
     },
-    "roulette_mechanic": {
+    "rouletteMechanic": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::roulette-mechanic.roulette-mechanic",

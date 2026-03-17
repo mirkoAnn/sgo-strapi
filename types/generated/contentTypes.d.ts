@@ -872,7 +872,7 @@ export interface ApiRouletteRoulette extends Struct.CollectionTypeSchema {
     provider: Schema.Attribute.Relation<'manyToOne', 'api::provider.provider'>;
     publishedAt: Schema.Attribute.DateTime;
     rating: Schema.Attribute.Component<'common.rating', false>;
-    roulette_mechanic: Schema.Attribute.Relation<
+    rouletteMechanic: Schema.Attribute.Relation<
       'manyToOne',
       'api::roulette-mechanic.roulette-mechanic'
     >;

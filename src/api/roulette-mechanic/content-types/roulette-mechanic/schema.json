@@ -41,7 +41,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::roulette.roulette",
-      "mappedBy": "roulette_mechanic"
+      "mappedBy": "rouletteMechanic"
     },
     "author": {
       "type": "relation",
