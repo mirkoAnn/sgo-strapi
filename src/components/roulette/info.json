@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_roulette_infos",
+  "info": {
+    "displayName": "Info"
+  },
+  "options": {},
+  "attributes": {
+    "rtp": {
+      "type": "string"
+    },
+    "volatility": {
+      "type": "enumeration",
+      "enum": [
+        "Bassa",
+        "Media",
+        "Alta"
+      ]
+    },
+    "betMin": {
+      "type": "string"
+    },
+    "betMax": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

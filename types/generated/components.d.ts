@@ -134,6 +134,19 @@ export interface FaqsFaqs extends Struct.ComponentSchema {
   };
 }
 
+export interface RouletteInfo extends Struct.ComponentSchema {
+  collectionName: 'components_roulette_infos';
+  info: {
+    displayName: 'Info';
+  };
+  attributes: {
+    betMax: Schema.Attribute.String;
+    betMin: Schema.Attribute.String;
+    rtp: Schema.Attribute.String;
+    volatility: Schema.Attribute.Enumeration<['Bassa', 'Media', 'Alta']>;
+  };
+}
+
 export interface SeoSeo extends Struct.ComponentSchema {
   collectionName: 'components_seo_seos';
   info: {
@@ -175,6 +188,7 @@ declare module '@strapi/strapi' {
       'common.colors': CommonColors;
       'common.rating': CommonRating;
       'faqs.faqs': FaqsFaqs;
+      'roulette.info': RouletteInfo;
       'seo.seo': SeoSeo;
       'slot.info': SlotInfo;
     }

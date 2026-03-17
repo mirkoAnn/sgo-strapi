@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roulette_mechanics",
+  "info": {
+    "singularName": "roulette-mechanic",
+    "pluralName": "roulette-mechanics",
+    "displayName": "Roulette Mechanic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "introContent": {
+      "type": "blocks"
+    },
+    "firstContent": {
+      "type": "blocks"
+    },
+    "secondContent": {
+      "type": "blocks"
+    },
+    "faqs": {
+      "type": "component",
+      "component": "faqs.faqs",
+      "repeatable": true
+    },
+    "roulettes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::roulette.roulette",
+      "mappedBy": "roulette_mechanic"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "roulette_mechanics"
+    }
+  }
+}

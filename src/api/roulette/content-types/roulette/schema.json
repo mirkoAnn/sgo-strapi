@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roulettes",
+  "info": {
+    "singularName": "roulette",
+    "pluralName": "roulettes",
+    "displayName": "Roulette"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "sessions": {
+      "type": "integer",
+      "default": 0
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gameplay": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gameUrl": {
+      "type": "string"
+    },
+    "introContent": {
+      "type": "blocks"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "roulettes"
+    },
+    "provider": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::provider.provider",
+      "inversedBy": "roulettes"
+    },
+    "roulette_mechanic": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::roulette-mechanic.roulette-mechanic",
+      "inversedBy": "roulettes"
+    },
+    "info": {
+      "type": "component",
+      "component": "roulette.info",
+      "repeatable": false
+    }
+  }
+}

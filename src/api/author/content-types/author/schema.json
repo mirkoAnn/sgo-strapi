@@ -65,6 +65,18 @@
       "relation": "oneToMany",
       "target": "api::slot-mechanic.slot-mechanic",
       "mappedBy": "author"
+    },
+    "roulettes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::roulette.roulette",
+      "mappedBy": "author"
+    },
+    "roulette_mechanics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::roulette-mechanic.roulette-mechanic",
+      "mappedBy": "author"
     }
   }
 }
