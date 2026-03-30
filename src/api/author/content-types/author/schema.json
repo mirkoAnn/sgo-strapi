@@ -63,7 +63,8 @@
       }
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "name"
     },
     "slots": {
       "type": "relation",
