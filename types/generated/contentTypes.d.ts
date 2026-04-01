@@ -692,6 +692,7 @@ export interface ApiCasinoItCasinoIt extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'>;
+    logoSmall: Schema.Attribute.Media<'images'>;
     opinionContent: Schema.Attribute.Blocks;
     paymentMethods: Schema.Attribute.Relation<
       'manyToMany',
