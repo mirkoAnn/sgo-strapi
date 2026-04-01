@@ -29,6 +29,13 @@
       "relation": "manyToMany",
       "target": "api::casino-it.casino-it",
       "mappedBy": "paymentMethods"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

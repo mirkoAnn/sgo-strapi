@@ -82,6 +82,18 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "slotThemes"
+    },
+    "icon": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

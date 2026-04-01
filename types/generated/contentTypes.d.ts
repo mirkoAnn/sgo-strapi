@@ -1117,6 +1117,7 @@ export interface ApiPaymentMethodPaymentMethod
       'api::payment-method.payment-method'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
@@ -1660,6 +1661,12 @@ export interface ApiSlotMechanicSlotMechanic
           localized: true;
         };
       }>;
+    icon: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     introContent: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1725,6 +1732,12 @@ export interface ApiSlotThemeSlotTheme extends Struct.CollectionTypeSchema {
         };
       }>;
     firstContent: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    icon: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
