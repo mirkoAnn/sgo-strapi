@@ -21,6 +21,14 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "casinosEs"
+    },
+    "title": {
+      "type": "string",
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
