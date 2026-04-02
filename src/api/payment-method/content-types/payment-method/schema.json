@@ -18,12 +18,6 @@
       "type": "uid",
       "targetField": "title"
     },
-    "casinosIt": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::casino-it.casino-it",
-      "mappedBy": "paymentMethods"
-    },
     "logo": {
       "type": "media",
       "multiple": false,
