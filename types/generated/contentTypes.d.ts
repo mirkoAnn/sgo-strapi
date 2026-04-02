@@ -780,73 +780,6 @@ export interface ApiHomePageItHomePageIt extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
-  collectionName: 'homepages';
-  info: {
-    displayName: 'Homepage';
-    pluralName: 'homepages';
-    singularName: 'homepage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    howToPlaySlotsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    introContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    jackpotContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage.homepage'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    whyChooseSGOContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-  };
-}
-
 export interface ApiPaymentMethodPaymentMethod
   extends Struct.CollectionTypeSchema {
   collectionName: 'payment_methods';
@@ -1005,44 +938,6 @@ export interface ApiProvidersPageItProvidersPageIt
   };
 }
 
-export interface ApiProvidersPageProvidersPage extends Struct.SingleTypeSchema {
-  collectionName: 'providers_pages';
-  info: {
-    displayName: 'ProvidersPage';
-    pluralName: 'providers-pages';
-    singularName: 'providers-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::providers-page.providers-page'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiRouletteMechanicRouletteMechanic
   extends Struct.CollectionTypeSchema {
   collectionName: 'roulette_mechanics';
@@ -1103,85 +998,6 @@ export interface ApiRouletteMechanicRouletteMechanic
       }>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiRoulettePageRoulettePage extends Struct.SingleTypeSchema {
-  collectionName: 'roulette_pages';
-  info: {
-    displayName: 'Roulette Page';
-    pluralName: 'roulette-pages';
-    singularName: 'roulette-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    howToPlayContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    introContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::roulette-page.roulette-page'
-    >;
-    providersContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    risksContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    securityContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    typesContent: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1702,98 +1518,6 @@ export interface ApiSlotsBestItSlotsBestIt extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiSlotsBestSlotsBest extends Struct.SingleTypeSchema {
-  collectionName: 'slots_bests';
-  info: {
-    displayName: 'Slots Best';
-    pluralName: 'slots-bests';
-    singularName: 'slots-best';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    bestSlotsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    beyondClassicContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    bigBassContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    bookOfRaContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    characteristicsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    gateOfOlympusContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    introContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::slots-best.slots-best'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    tryContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiSlotsNewEsSlotsNewEs extends Struct.SingleTypeSchema {
   collectionName: 'slots_news_es';
   info: {
@@ -1854,92 +1578,6 @@ export interface ApiSlotsNewItSlotsNewIt extends Struct.SingleTypeSchema {
     reelsContent: Schema.Attribute.Blocks;
     securityContent: Schema.Attribute.Blocks;
     seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSlotsNewSlotsNew extends Struct.SingleTypeSchema {
-  collectionName: 'slots_news';
-  info: {
-    displayName: 'Slots New';
-    pluralName: 'slots-news';
-    singularName: 'slots-new';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    backstageContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    futureContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    gamificationContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    graphicsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    introContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::slots-new.slots-new'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    reelsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    securityContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2007,79 +1645,6 @@ export interface ApiSlotsPageItSlotsPageIt extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     whatAreSlotsContent: Schema.Attribute.Blocks;
-  };
-}
-
-export interface ApiSlotsPageSlotsPage extends Struct.SingleTypeSchema {
-  collectionName: 'slots_pages';
-  info: {
-    displayName: 'Slots Page';
-    pluralName: 'slots-pages';
-    singularName: 'slots-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    bestSlotsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    howToPlaySlotsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    introContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::slots-page.slots-page'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slotsCategoryContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    whatAreSlotsContent: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
   };
 }
 
@@ -2602,14 +2167,11 @@ declare module '@strapi/strapi' {
       'api::game-error-report.game-error-report': ApiGameErrorReportGameErrorReport;
       'api::home-page-es.home-page-es': ApiHomePageEsHomePageEs;
       'api::home-page-it.home-page-it': ApiHomePageItHomePageIt;
-      'api::homepage.homepage': ApiHomepageHomepage;
       'api::payment-method.payment-method': ApiPaymentMethodPaymentMethod;
       'api::provider.provider': ApiProviderProvider;
       'api::providers-page-es.providers-page-es': ApiProvidersPageEsProvidersPageEs;
       'api::providers-page-it.providers-page-it': ApiProvidersPageItProvidersPageIt;
-      'api::providers-page.providers-page': ApiProvidersPageProvidersPage;
       'api::roulette-mechanic.roulette-mechanic': ApiRouletteMechanicRouletteMechanic;
-      'api::roulette-page.roulette-page': ApiRoulettePageRoulettePage;
       'api::roulette.roulette': ApiRouletteRoulette;
       'api::roulettes-page-es.roulettes-page-es': ApiRoulettesPageEsRoulettesPageEs;
       'api::roulettes-page-it.roulettes-page-it': ApiRoulettesPageItRoulettesPageIt;
@@ -2619,13 +2181,10 @@ declare module '@strapi/strapi' {
       'api::slot.slot': ApiSlotSlot;
       'api::slots-best-es.slots-best-es': ApiSlotsBestEsSlotsBestEs;
       'api::slots-best-it.slots-best-it': ApiSlotsBestItSlotsBestIt;
-      'api::slots-best.slots-best': ApiSlotsBestSlotsBest;
       'api::slots-new-es.slots-new-es': ApiSlotsNewEsSlotsNewEs;
       'api::slots-new-it.slots-new-it': ApiSlotsNewItSlotsNewIt;
-      'api::slots-new.slots-new': ApiSlotsNewSlotsNew;
       'api::slots-page-es.slots-page-es': ApiSlotsPageEsSlotsPageEs;
       'api::slots-page-it.slots-page-it': ApiSlotsPageItSlotsPageIt;
-      'api::slots-page.slots-page': ApiSlotsPageSlotsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
