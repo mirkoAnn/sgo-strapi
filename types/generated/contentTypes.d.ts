@@ -766,6 +766,13 @@ export interface ApiCasinoCasino extends Struct.CollectionTypeSchema {
       'api::provider.provider'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<100>;
     rating: Schema.Attribute.Component<'common.rating', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
