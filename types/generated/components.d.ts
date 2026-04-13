@@ -199,7 +199,9 @@ export interface SlotInfo extends Struct.ComponentSchema {
     paylines: Schema.Attribute.String;
     reels: Schema.Attribute.String;
     rtp: Schema.Attribute.String;
-    volatility: Schema.Attribute.Enumeration<['Bassa', 'Media', 'Alta']>;
+    volatility: Schema.Attribute.Enumeration<
+      ['low', 'medium-low', 'medium', 'medium-high', 'high']
+    >;
     winMax: Schema.Attribute.String;
     winMin: Schema.Attribute.String;
   };

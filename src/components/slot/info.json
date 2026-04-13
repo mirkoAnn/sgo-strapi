@@ -38,9 +38,11 @@
     "volatility": {
       "type": "enumeration",
       "enum": [
-        "Bassa",
-        "Media",
-        "Alta"
+        "low",
+        "medium-low",
+        "medium",
+        "medium-high",
+        "high"
       ]
     }
   },
