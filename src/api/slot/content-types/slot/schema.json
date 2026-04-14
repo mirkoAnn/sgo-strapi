@@ -52,21 +52,6 @@
         "audios"
       ]
     },
-    "gameplay": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "sessions": {
       "type": "integer",
       "pluginOptions": {
@@ -159,6 +144,16 @@
       "relation": "manyToOne",
       "target": "api::slot-mechanic.slot-mechanic",
       "inversedBy": "slots"
+    },
+    "images": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.figure",
+      "repeatable": true
     }
   }
 }

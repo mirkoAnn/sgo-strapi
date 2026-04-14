@@ -17,9 +17,6 @@
     "betMax": {
       "type": "string"
     },
-    "winMin": {
-      "type": "string"
-    },
     "winMax": {
       "type": "string"
     },
@@ -44,6 +41,9 @@
         "medium-high",
         "high"
       ]
+    },
+    "releaseYear": {
+      "type": "string"
     }
   },
   "config": {}

@@ -138,6 +138,17 @@ export interface CommonContent extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFigure extends Struct.ComponentSchema {
+  collectionName: 'components_common_figures';
+  info: {
+    displayName: 'Figure';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface CommonRating extends Struct.ComponentSchema {
   collectionName: 'components_common_ratings';
   info: {
@@ -198,12 +209,12 @@ export interface SlotInfo extends Struct.ComponentSchema {
     hasJackpot: Schema.Attribute.Boolean;
     paylines: Schema.Attribute.String;
     reels: Schema.Attribute.String;
+    releaseYear: Schema.Attribute.String;
     rtp: Schema.Attribute.String;
     volatility: Schema.Attribute.Enumeration<
       ['low', 'medium-low', 'medium', 'medium-high', 'high']
     >;
     winMax: Schema.Attribute.String;
-    winMin: Schema.Attribute.String;
   };
 }
 
@@ -216,6 +227,7 @@ declare module '@strapi/strapi' {
       'casino.welcome-bonus': CasinoWelcomeBonus;
       'common.colors': CommonColors;
       'common.content': CommonContent;
+      'common.figure': CommonFigure;
       'common.rating': CommonRating;
       'faqs.faqs': FaqsFaqs;
       'roulette.info': RouletteInfo;

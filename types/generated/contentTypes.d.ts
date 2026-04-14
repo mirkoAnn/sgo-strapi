@@ -1441,13 +1441,13 @@ export interface ApiSlotSlot extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    gameplay: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+    gameUrl: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    gameUrl: Schema.Attribute.Text &
+    images: Schema.Attribute.Component<'common.figure', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
