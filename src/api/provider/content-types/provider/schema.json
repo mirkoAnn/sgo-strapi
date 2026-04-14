@@ -85,6 +85,16 @@
       "relation": "manyToMany",
       "target": "api::casino.casino",
       "mappedBy": "providers"
+    },
+    "content": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.content",
+      "repeatable": false
     }
   }
 }

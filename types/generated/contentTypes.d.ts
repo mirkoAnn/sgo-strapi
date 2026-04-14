@@ -951,6 +951,12 @@ export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    content: Schema.Attribute.Component<'common.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
