@@ -95,6 +95,16 @@
       },
       "component": "common.content",
       "repeatable": false
+    },
+    "faqs": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "faqs.faqs",
+      "repeatable": true
     }
   }
 }
