@@ -542,6 +542,38 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBestRoulettePageBestRoulettePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'best_roulette_pages';
+  info: {
+    displayName: 'Best Roulette Page';
+    pluralName: 'best-roulette-pages';
+    singularName: 'best-roulette-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    content: Schema.Attribute.Component<'common.content', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<'faqs.faqs', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::best-roulette-page.best-roulette-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBestSlotsPageBestSlotsPage extends Struct.SingleTypeSchema {
   collectionName: 'best_slots_pages';
   info: {
@@ -839,6 +871,57 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewRoulettePageNewRoulettePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'new_roulette_pages';
+  info: {
+    displayName: 'New Roulette Page';
+    pluralName: 'new-roulette-pages';
+    singularName: 'new-roulette-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    content: Schema.Attribute.Component<'common.content', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<'faqs.faqs', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-roulette-page.new-roulette-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2077,11 +2160,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::author.author': ApiAuthorAuthor;
+      'api::best-roulette-page.best-roulette-page': ApiBestRoulettePageBestRoulettePage;
       'api::best-slots-page.best-slots-page': ApiBestSlotsPageBestSlotsPage;
       'api::casino.casino': ApiCasinoCasino;
       'api::casinos-page.casinos-page': ApiCasinosPageCasinosPage;
       'api::game-error-report.game-error-report': ApiGameErrorReportGameErrorReport;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::new-roulette-page.new-roulette-page': ApiNewRoulettePageNewRoulettePage;
       'api::new-slots-page.new-slots-page': ApiNewSlotsPageNewSlotsPage;
       'api::payment-method.payment-method': ApiPaymentMethodPaymentMethod;
       'api::provider.provider': ApiProviderProvider;

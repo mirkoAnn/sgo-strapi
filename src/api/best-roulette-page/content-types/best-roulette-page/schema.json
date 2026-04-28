@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "best_roulette_pages",
+  "info": {
+    "singularName": "best-roulette-page",
+    "pluralName": "best-roulette-pages",
+    "displayName": "Best Roulette Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
+    },
+    "content": {
+      "type": "component",
+      "component": "common.content",
+      "repeatable": false
+    },
+    "faqs": {
+      "type": "component",
+      "component": "faqs.faqs",
+      "repeatable": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    }
+  }
+}
